@@ -13,29 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['as' => 'auth.'], function () {
-    Route::get('/', [\App\Http\Controllers\AuthController::class, 'index'])->name('login');
-    Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('login.do');
-    Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
-    Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
-});
-
-Route::group(['middleware' => ['auth']], function () {
-
-    Route::group(['prefix'=>'usuarios','as'=>'users.'],function(){
-        Route::get('/',[\App\Http\Controllers\Users::class, 'index'])->name('index');
-        Route::get('/cadastro',[\App\Http\Controllers\Users::class,'create'])->name('cadastro');
-        Route::post('/store',[\App\Http\Controllers\Users::class,'store'])->name('store');
-        Route::get('/editando/{id}',[\App\Http\Controllers\Users::class,'edit'])->name('edit');
-        Route::put('/update/{id}',[\App\Http\Controllers\Users::class,'update'])->name('update');
-        Route::get('/delete/{id}',[\App\Http\Controllers\Users::class,'destroy'])->name('delete');
-        Route::post('/set-theme',[\App\Http\Controllers\Users::class,'setTheme'])->name('set-theme');
-    });
-
-    Route::get('/dash',[\App\Http\Controllers\AuthController::class, 'dash'])->name('dash');
-    Route::post('/dash',[\App\Http\Controllers\AuthController::class, 'dashAction'])->name('dash.do');
-
-    Route::get('/ocorrencia', [\App\Http\Controllers\Ocorrencia::class,'index'])->name('ocorrencia');
-    Route::get('/despachador', [\App\Http\Controllers\Despachador::class,'index'])->name('despachador');
-
+Route::get('/', function () {
+    return view('welcome');
 });
