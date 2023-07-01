@@ -8,6 +8,6 @@ class TestesController extends Controller
 {
     public function index(Request $request)
         {
-            return view('AdminLTE320/model');
+            return view('AdminLTE320/login');
         }
 }
