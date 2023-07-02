@@ -4,7 +4,7 @@
 <div class="hold-transition text-center" style="-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100vh;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center">
     <div class="login-box hold-transition">
       <div class="login-logo">
-        <a href="/"><b>{{env('APP_NAME')}}</b></a>
+        <a href="/"><b>{{config('app.name')}}</b></a>
       </div>
       <!-- /.login-logo -->
       <div class="card">

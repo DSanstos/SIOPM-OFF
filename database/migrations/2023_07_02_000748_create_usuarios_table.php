@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('USER', 30)->unique('user_key');
             $table->string('NOME', 100);
             $table->mediumText('PASSKEY');
-            $table->bollean('ACTIVE')->default(0);
+            $table->boolean('ACTIVE')->default(0);
             $table->timestamps();
         });
     }
